@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Expense</title>
+</head>
+<body>
+You can add your Expense Here<br>
+<form method="POST" class="form-horizontal">{% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-default">Save</button>
+</form>
+
+</body>
+</html>

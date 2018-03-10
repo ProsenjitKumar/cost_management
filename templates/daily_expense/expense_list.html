@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Expense List</title>
+</head>
+<body>
+<h1>Your Expense List</h1>
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Purpose</th>
+        <th>Amount</th>
+        <th>Date</th>
+    </tr>
+    </thead>
+
+<tbody>
+{% for expense in all_expense_list %}
+<tr>
+    <td>{{ expense.purpose }}</td>
+    <td>{{ expense.amount }}</td>
+    <td>{{ expense.date }}</td>
+    <td><a class="btn btn-primary" href="{% url 'edit-expense' expense.id %}">Edit</a></td>
+    <td><a class="btn btn-danger" href="{% url 'delete-expense' expense.id %}">Delete</a></td>
+</tr>
+{% endfor %}
+</tbody>
+
+</table>
+<a class="btn btn-primary" href="{% url 'add-expense' %}">Add New Expense</a>
+</body>
+</html>
